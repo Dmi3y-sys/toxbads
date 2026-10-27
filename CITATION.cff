@@ -1,0 +1,30 @@
+cff-version: 1.2.0
+title: "ToxBads: structured database of clinical cases of dietary supplement toxicity"
+message: "If you use this database or software, please cite it as below."
+type: dataset
+authors:
+  - family-names: "Оборин"
+    given-names: "Д. Б."
+    # Замените на реальные данные автора, например:
+    # family-names: Оборин
+    # given-names: "Д. Б."
+    # orcid: "https://orcid.org/0009-0007-2344-6477"
+version: "1.1"
+date-released: "2026-10-24"
+license: "CC-BY-NC-4.0"
+repository-code: "https://github.com/Dmi3y-sys/toxbads"
+# После депонирования на Zenodo раскомментируйте и укажите DOI:
+# doi: "10.5281/zenodo.XXXXXXX"
+abstract: >
+  ToxBads is a structured collection of published clinical case reports
+  and case series related to toxicity of biologically active dietary
+  supplements (BADS / nutraceuticals), with an interactive Streamlit
+  prototype for search and case browsing.
+keywords:
+  - dietary supplements
+  - nutraceuticals
+  - toxicity
+  - case reports
+  - hepatotoxicity
+  - pharmacovigilance
+  - ToxBads
