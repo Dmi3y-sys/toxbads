@@ -2,114 +2,78 @@
 
 **База клинических случаев токсичности биологически активных добавок (БАД)**
 
-Интерактивный прототип для поиска по веществам, просмотра клинических случаев, 2D-структур (PubChem / RDKit) и структурных алертов (токсикофоров).
+Интерактивный прототип: поиск по веществам, карточки, клинические случаи, фильтры, 2D-структуры (PubChem / RDKit).
 
-> ⚠️ **Важно:** ресурс носит исключительно информационный характер и **не является** медицинской рекомендацией. Один case report не доказывает причинно-следственную связь.
+> ⚠️ Ресурс **информационный**, не медицинская рекомендация. Один case report не доказывает причинно-следственную связь.
+
+**Сайт:** https://toxbads.streamlit.app  
+**Данные (Zenodo):** https://doi.org/10.5281/zenodo.23861316  
+**Куратор:** Д.Б. Оборин · ORCID [0009-0007-2344-6477](https://orcid.org/0009-0007-2344-6477)
+
+---
+
+## Данные (v1.4.1)
+
+| Показатель | Значение |
+|------------|----------|
+| Версия данных | **v1.4.1** (срез 2026-11-02) |
+| Позиции справочника (Substances) | 107 |
+| Источники | 68 |
+| Записи Cases | 87 |
+| Components | 111 |
+| Сумма n_patients | 683 |
+| Лицензия **данных** | [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) |
+| Лицензия **кода** (этот репозиторий) | MIT |
+
+Единица анализа в статистике сайта и статьи — **запись Cases**, не сумма пациентов.  
+Часть позиций справочника — literature-only (без извлечённых Cases в этой версии).
 
 ---
 
 ## Возможности
 
-- Поиск по названию (RU/EN), синонимам, действующему веществу
-- Карточка вещества: риск, CAS, PubChem, SMILES, статистика случаев
-- 2D-структура (PubChem) и подсветка токсикофоров (RDKit)
-- Фильтры по органу-мишени и тяжести
-- Каталог всех веществ по алфавиту
-- Страница «О проекте» и паспорт базы данных
-
-## Данные (снимок)
-
-| Показатель | Значение |
-|------------|----------|
-| Версия данных | v1.1 |
-| Веществ | ~103 |
-| Источников | 17 |
-| Клинических случаев | 35 |
-| Лицензия данных | [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) |
-
-Источники: PubMed/PMC, российские журналы, обзоры A.C. Brown (2016–2018), case reports 2017–2025.
+- Поиск по названию (RU/EN), синонимам
+- Карточка вещества: риск, CAS, PubChem, SMILES, статистика
+- 2D-структура и подсветка токсикофоров (RDKit, опционально)
+- Фильтры по органу и тяжести
+- Каталог веществ по алфавиту
+- Страница «О проекте» и паспорт базы
 
 ---
 
-## Быстрый старт (локально)
+## Файлы репозитория
+
+| Файл | Назначение |
+|------|------------|
+| `app.py` | Streamlit-приложение |
+| `toxbads_data.json` | Данные v1.4.1 |
+| `requirements.txt` | Зависимости |
+| `LICENSE` | MIT (код) |
+| `CITATION.cff` | Цитирование |
+
+Мастер-Excel для Zenodo **не** обязателен в репозитории сайта (лежит в депозите DOI).
+
+---
+
+## Локальный запуск
 
 ```bash
-# Клонировать
-git clone https://github.com/Dmi3y-sys/toxbads.git
+git clone https://github.com/<USERNAME>/toxbads.git
 cd toxbads
-
-# Виртуальное окружение (рекомендуется)
-python -m venv venv
-
-# Windows:
-venv\Scripts\activate
-# macOS / Linux:
-source venv/bin/activate
-
-# Зависимости
+python -m venv .venv
+source .venv/bin/activate   # Windows: .venv\Scripts\activate
 pip install -r requirements.txt
-
-# Запуск
 streamlit run app.py
 ```
 
-Откроется браузер: http://localhost:8501
+## Обновление Streamlit Community Cloud
 
-### Структура репозитория
-
-```
-toxbads/
-├── app.py                 # Streamlit-приложение
-├── toxbads_data.json      # Данные (вещества, случаи, источники, компоненты)
-├── requirements.txt       # Зависимости Python
-├── README.md              # Этот файл
-├── LICENSE                # Лицензия кода (MIT)
-├── CITATION.cff           # Метаданные для цитирования
-└── .gitignore
-```
+1. Замените в репозитории файлы из этого снимка (`app.py`, `toxbads_data.json`, …).
+2. `git add -A && git commit -m "data: ToxBads v1.4.1" && git push`
+3. Cloud подтянет деплой автоматически (или Redeploy в настройках приложения).
 
 ---
 
-## Деплой на Streamlit Community Cloud
+## Цитирование данных
 
-1. Создайте **публичный** репозиторий на GitHub и загрузите файлы.
-2. Войдите на [share.streamlit.io](https://share.streamlit.io) через GitHub.
-3. **Create app** → укажите репозиторий, ветку `main`, Main file path: `app.py`.
-4. (Опционально) задайте URL, например `toxbads.streamlit.app`.
-5. **Deploy**.
-
-Документация: https://docs.streamlit.io/deploy/streamlit-community-cloud
-
----
-
-## Цитирование
-
-Если используете базу или прототип в публикации:
-
-```
-Автор. (2026). ToxBads: structured database of clinical cases of
-dietary supplement toxicity (Version 1.1) [Data set / Software].
-Zenodo. https://doi.org/10.5281/zenodo.XXXXXXX
-```
-
-После депонирования на Zenodo замените `XXXXXXX` на реальный DOI и обновите `CITATION.cff`.
-
----
-
-## Лицензии
-
-| Объект | Лицензия |
-|--------|----------|
-| Код (`app.py` и др.) | MIT (см. `LICENSE`) |
-| Данные (`toxbads_data.json`) | [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) |
-
----
-
-## Автор / куратор
-
-Независимый исследователь (проект ToxBads).  
-Контакт: укажите в `DB_PASSPORT` внутри `app.py` и здесь после публикации.
-
-## Отказ от ответственности
-
-Сайт и база не заменяют консультацию врача и не предназначены для диагностики или лечения. Подсветка токсикофоров — визуальная подсказка, не (Q)SAR-оценка и не доказательство токсичности.
+Oborin DB. ToxBads: structured database of clinical cases of biologically active supplement (BADS) toxicity, version 1.4.1 [Data set]. Zenodo; 2026. https://doi.org/10.5281/zenodo.23861316

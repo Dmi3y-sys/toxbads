@@ -26,8 +26,8 @@ st.set_page_config(
 )
 
 # === Константы ===
-APP_VERSION = "1.9"
-DATA_VERSION = "v1.1"
+APP_VERSION = "1.9.1"
+DATA_VERSION = "v1.4.1"
 
 # === Паспорт базы данных ===
 DB_PASSPORT = {
@@ -35,10 +35,10 @@ DB_PASSPORT = {
     "full_name": "База клинических случаев токсичности биологически активных добавок",
     "version": DATA_VERSION,
     "created": "2026-06",
-    "updated": "2026-10-24",
+    "updated": "2026-11-09",
     "author": "Независимый исследователь Оборин Дмитрий Борисович (куратор проекта ToxBads)",
     "license": "CC BY-NC 4.0",
-    "contact": "Связь с автором: dmi.oborin@gmail.com /Telegram @kemisto",
+    "contact": "Связь с автором: dmi.oborin@gmail.com / @kemisto",
     "scope": "Опубликованные case reports и case series по токсичности БАД/нутрицевтиков",
 }
 
