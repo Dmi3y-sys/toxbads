@@ -1,24 +1,6 @@
-# Python
 __pycache__/
-*.py[cod]
-*$py.class
-.Python
-venv/
 .venv/
-env/
-
-# Streamlit
+venv/
 .streamlit/secrets.toml
-
-# OS / IDE
 .DS_Store
-.idea/
-.vscode/
 *.log
-.cache/
-tmp/
-temp/
-
-# Local data dumps (keep toxbads_data.json tracked)
-*.xlsx
-!docs/**

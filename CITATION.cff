@@ -1,14 +1,13 @@
 cff-version: 1.2.0
 title: "ToxBads — structured database of clinical cases of BADS toxicity"
-message: "If you use this software or dataset, please cite it as below."
-type: software
+message: "If you use this dataset, please cite it using these metadata."
+type: dataset
 authors:
   - family-names: Oborin
     given-names: Dmitry B.
     orcid: "https://orcid.org/0009-0007-2344-6477"
 version: "1.4.1"
 date-released: "2026-11-02"
-license: "MIT"
-doi: "10.5281/zenodo.23861316"
-url: "https://toxbads.streamlit.app"
-repository-code: "https://github.com/YOUR_USERNAME/toxbads"
+license: "CC-BY-NC-4.0"
+doi: "10.5281/zenodo.24089283"
+url: "https://doi.org/10.5281/zenodo.24089283"

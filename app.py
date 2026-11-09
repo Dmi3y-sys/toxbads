@@ -35,10 +35,10 @@ DB_PASSPORT = {
     "full_name": "База клинических случаев токсичности биологически активных добавок",
     "version": DATA_VERSION,
     "created": "2026-06",
-    "updated": "2026-11-09",
-    "author": "Независимый исследователь Оборин Дмитрий Борисович (куратор проекта ToxBads)",
+    "updated": "2026-11-02",
+    "author": "Д.Б. Оборин (ORCID 0009-0007-2344-6477)",
     "license": "CC BY-NC 4.0",
-    "contact": "Связь с автором: dmi.oborin@gmail.com / @kemisto",
+    "contact": "ORCID: https://orcid.org/0009-0007-2344-6477 · данные: https://doi.org/10.5281/zenodo.24089283",
     "scope": "Опубликованные case reports и case series по токсичности БАД/нутрицевтиков",
 }
 
